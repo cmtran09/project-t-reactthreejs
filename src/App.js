@@ -1,12 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+
+import { Canvas } from 'react-three-fiber'
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello Word</h1>
-    </div>
+    <>
+      <Canvas>
+        <mesh>
+          <boxBufferGeometry attach='geometry' args={[1, 1, 1]} />
+          <meshStandardMaterial attach='material'/>
+        </mesh>
+      </Canvas>
+    </>
   );
 }
 
