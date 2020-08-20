@@ -13,7 +13,7 @@ const SpinningBox = ({ position, color, args }) => {
   return (
     <mesh position={position} ref={mesh} >
       <boxBufferGeometry attach='geometry' args={args} />
-      <meshStandardMaterial attach='material' color='pink' />
+      <meshStandardMaterial attach='material' color={color} />
     </mesh >
   )
 }
@@ -24,9 +24,9 @@ function App() {
       <Canvas colorManagement camera={{ position: [-5, 2, 10], fov: 60 }}>
         // ambientLight globally illuminating all objects on the sceen equally
         <ambientLight intenisty={0.3} />
-        <SpinningBox position={[0, 1, 0]} args={[1,1,1]}/>
-        <SpinningBox position={[-2, 1, -5]} args={[1,1,1]}/>
-        <SpinningBox position={[5, 1, -2]} args={[1,1,1]}/>
+        <SpinningBox position={[0, 1, 0]} args={[3,1,1]} color='pink'/>
+        <SpinningBox position={[-2, 1, -5]} args={[1,1,1]} color='green'/>
+        <SpinningBox position={[5, 1, -2]} args={[1,1,1]} color='blue'/>
       </Canvas>
     </>
   );
